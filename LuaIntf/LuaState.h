@@ -301,10 +301,10 @@ public:
         { lua_setallocf(L, func, userdata);}
 
 #if LUA_VERSION_NUM <= 503
-    const lua_Number* version() const
-        { return lua_version(L); }
+    lua_Number version() const
+        { return *lua_version(L); }
 #else
-    const lua_Number version() const
+    lua_Number version() const
         { return lua_version(L); }
 #endif
 
